@@ -6,5 +6,5 @@ int main(){
 	printf("Informe a porcentagem da gorjeta= ");
 	scanf("%f",&porcent);
 	gorjeta = (porcent/100)*conta;
-	printf("a gorjeta do garcom sera de R$%9.2f", gorjeta);
+	printf("a gorjeta do garcom sera de R$%.2f", gorjeta);
 }
