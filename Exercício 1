@@ -6,5 +6,5 @@ int main(){
 	printf("Informe a altura do triangulo em m= ");
 	scanf("%f",&altura);
 	area=(base*altura)/2;
-	printf("a area do triangulo eh %5.2f m2", area);
+	printf("a area do triangulo eh %.2f m2", area);
 }
