@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main(){
+	float conta, porcent, gorjeta;
+	printf("Informe o valor da conta= ");
+	scanf("%f",&conta);
+	printf("Informe a porcentagem da gorjeta= ");
+	scanf("%f",&porcent);
+	gorjeta = (porcent/100)*conta;
+	printf("a gorjeta do garcom sera de R$%9.2f", gorjeta);
+}
