@@ -2,27 +2,33 @@
 #include <stdlib.h>
 
 int main(){
-    int m,n,i,j,result;
-    printf("Escreva o numero de M = ");
+    int m, n, x, y, v, w, result, maior=0;
+    printf("Escreva o numero de M =\n");
     scanf("%d", &m);
-    while(m<0){
-    	printf("so pode com numeros naturais!\n");
-    	printf("tente novamente = ");
-    	scanf("%d", &m);
-	}
-    printf("\nEscreva o numero de N = ");
+    printf("Escreva o numero de N =\n");
     scanf("%d", &n);
-    while(n<0){
+    while(m<0 || n<0){
     	printf("so pode com numeros naturais!\n");
-    	printf("tente novamente = ");
-    	scanf("%d", &n);
-	}
-    
-    for (i = 0; i <= m; i++){
-        for (j = 0; j <= n; j++){
-            result = i*j - i*i + j;
-            printf("%dx%d - %d^2 +  %d = %d \n",i,j,i,j,result);
+    	printf("tente novamente\n");
+        if(m < 0){
+            printf("digite um novo valor para m:  ");
+    	    scanf("%d", &m);
+        }
+        if(n < 0){
+            printf("digite um novo valor para n:  ");   
+    	    scanf("%d", &n);   
+        } 
+    }
+    for (x = 0; x <= m; x++){
+        for (y = 0; y <= n; y++){
+            result = x*y - x*x + y;
+            //printf("%dx%d - %d^2 +  %d = %d \n",x,y,x,y,result);   //este print para ver todas as situações
+            if(result >= maior){
+            maior = result;
+            v = x;
+            w = y;
+            }
         }
     }
-
+    printf("os valores de x e y para que haja o valor maximo sao de %d e % d cujo resultade é de %d",v, w, maior);
 }
