@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <math.h>
+
+int scanIntIntervalo(){
+	int x;
+	printf("\ndigite um numero entre 0 e 1000: ");
+	scanf("%d", &x);
+	while(x<0 || x>1000){
+		printf("\nnumero fora do intervalo, tente novamente = ");
+		scanf("%d", &x);
+	}
+
+	return x;
+}
+int verificaMenor(int n1, int n2){
+	if (n1<n2)
+	{
+		return n1;
+	}
+	return n2;
+	
+}
+int verificaMaior(int n1, int n2){
+	if (n1>n2)
+	{
+		return n1;
+	}
+	return n2;
+	
+}
+float percentual(float maiornumero, float todo){
+	return 100*(maiornumero/todo);
+}
+
+float absdif(float maiornum, float menornum){
+	return maiornum-menornum;
+}
+
+int main(){
+	int num, num1, maior, menor, total;
+	float percentual, diferenca;
+	num = scanIntIntervalo();
+	num1 = scanIntIntervalo();
+	maior = verificaMaior(num,num1);
+	menor = verificaMenor(num,num1);
+		printf("\no maior numero eh = %d", maior);
+	printf("\no menor numero eh = %d", menor);
+	num = (float)num;
+	num1 = (float)num1;
+	maior = (float)maior;
+	menor = (float)menor;
+	total = num+num1;
+	percentual= percentual(maior,total);
+	diferenca = absdif(maior, menor);
+	printf("\npercentual = %f", percentual);
+	printf("\ndiferenca = %f", diferenca);
+}
