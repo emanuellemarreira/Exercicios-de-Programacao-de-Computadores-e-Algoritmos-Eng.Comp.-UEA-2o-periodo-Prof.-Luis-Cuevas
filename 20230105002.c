@@ -1,25 +1,14 @@
 #include <stdio.h>
 
-int getSemanas(){
-	int sem;
-	printf("\ninforme a quantidade de semanas do feto = ");
-	scanf("%d", &sem);
-	while(sem<0){
+int getTeclado(){
+	int num;
+	
+	scanf("%d", &num);
+	while(num<0){
 		printf("\nnumero invalido, tente novamente = ");
-		scanf("%d", &sem);
+		scanf("%d", &num);
 	}
-	return sem;
-}
-
-float getPeso(){
-	float peso;
-	printf("\ninforme a quantidade de gramas do feto = ");
-	scanf("%f", &peso);
-	while(peso<0){
-		printf("\nnumero invalido, tente novamente = ");
-		scanf("%f", &peso);
-	}
-	return peso;
+	return num;
 }
 
 void verificaParto(int tempo, float gramas){
@@ -39,9 +28,10 @@ void verificaParto(int tempo, float gramas){
 int main(){
 	float pesog;
 	int semanas;
-	
-	semanas = getSemanas();
-	pesog = getPeso();
+	printf("\ninforme a quantidade de semanas do feto = ");
+	semanas = getTeclado();
+	printf("\ninforme a quantidade de gramas do feto = ");
+	pesog = getTeclado();
 	
 	verificaParto(semanas, pesog);
 	
