@@ -40,8 +40,16 @@ int main(){
 	int numero1, numero2, casas1, casas2, soma1, soma2, fat1, fat2;
 	printf("digite um numero 1  = ");
 	scanf("%d", &numero1);
+	while(numero1<0){
+		printf("\napenas numeros positivos, tente novamente = ");
+		scanf("%d", &numero1);
+	}
 	printf("digite o numero 2 = ");
 	scanf("%d", &numero2);
+	while(numero2<0){
+		printf("\napenas numeros positivos, tente novamente = ");
+		scanf("%d", &numero2);
+	}
 	casas1 = quantidadeCasas(numero1);
 	casas2 = quantidadeCasas(numero2);
 	if (casas1!=casas2){
