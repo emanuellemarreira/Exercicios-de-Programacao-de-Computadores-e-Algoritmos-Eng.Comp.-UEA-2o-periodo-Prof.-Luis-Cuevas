@@ -1,7 +1,10 @@
 #include <stdio.h>
 
 int quantidadeCasas(int n){
-	int j=1, i=0;
+	int j=1, i=0, nn;
+	if(n<0){
+		n = n*(-1);
+	}
 	for(j=1;j<=n;j*=10){
 		i++;
 	}
@@ -15,9 +18,16 @@ void pegaNum(int num, int d){
 		for(cont=controle;cont>=1;cont--){
 			for(k=1;k<casas;k++){
 		    multi = multi * 10;
-	        }
-		    resto = num%multi;
-		    sub = num - resto;
+	        } 
+		    
+			if(num>0){
+			resto = num%multi;	
+			sub = num - resto;
+			}else{
+				resto = ((-1)*num)%multi;
+				sub = (num*(-1)) - resto;
+			}
+		    
 		    peganum = sub/multi;
 		    if (peganum==d){
 				soma = soma + 1;
@@ -35,6 +45,10 @@ int main(){
 	scanf("%d", &numero1);
 	printf("digite o numero 2 entre 0 e 9 = ");
 	scanf("%d", &numero2);
+	while(numero2<0 || numero2>9){
+		printf("\nnumero invalido, tente novamente = ");
+		scanf("%d", &numero2);
+	}
 	pegaNum(numero1, numero2);
 	
 	return 0;
