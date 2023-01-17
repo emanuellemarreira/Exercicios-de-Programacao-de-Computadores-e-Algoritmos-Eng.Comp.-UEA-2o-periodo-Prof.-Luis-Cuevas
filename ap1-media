@@ -1,0 +1,31 @@
+#include<stdio.h> 
+int main(){ 
+float media, menormedia, maiormedia, somatotal, mediatotal; 
+int count=0, ask=1; 
+while(ask==1){ 
+printf("\ndigite a media do aluno = "); 
+scanf("%f", &media); 
+if(media<0){ 
+break; 
+} 
+if(count==0){ 
+maiormedia = media; 
+menormedia = media; 
+} else { 
+if(media>maiormedia){ 
+maiormedia = media; 
+} 
+if(media<menormedia){ 
+menormedia = media; 
+} 
+} 
+somatotal = somatotal+media; 
+count++; 
+media=0; 
+} 
+mediatotal = somatotal/count; 
+printf("\nmedia total = %.2f", mediatotal); 
+printf("\nmedia maior = %.2f", maiormedia); 
+printf("\nmedia menor = %.2f", menormedia); 
+return 0; 
+}
