@@ -1,0 +1,37 @@
+#include<stdio.h> 
+#include<math.h> 
+float pegaNum(){ 
+float atg; 
+printf("\ndigite o grau entre 0 e 1 = "); 
+scanf("%f", &atg); 
+while(atg<0 || atg>1){ 
+printf("\nfora do intervalo, tente novamente = "); 
+scanf("%f", &atg); 
+} 
+return atg; 
+} 
+float arctan(float xi){ 
+float arco=0; 
+int count=0, j; 
+j=1; 
+while(fabs(pow(xi,j)/j)>0.0001){ 
+if(count%2==0){ 
+arco+=pow(xi,j)/j; 
+} 
+if(count%2==1){ 
+arco-=pow(xi,j)/j; 
+} 
+j=j+2; 
+count++; 
+} 
+return arco; 
+} 
+void imprimeArco(float nn, float arcotangente){ 
+printf("\n %.2f = %.4frad", nn, arcotangente); 
+} 
+int main(){ 
+float num, arctg; 
+num = pegaNum();
+arctg=arctan(num); 
+imprimeArco(num, arctg); return 0; 
+}
