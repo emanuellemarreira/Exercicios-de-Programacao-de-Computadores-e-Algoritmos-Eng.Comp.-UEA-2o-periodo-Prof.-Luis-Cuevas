@@ -24,12 +24,12 @@ int main() {
 
     for (i = 0; i < t1; i++) {
         printf("qual o %d valor do vetor 1?\n", i+1);
-        scanf("%d", &V1[i]);
+        scanf("%d", V1+i);
     }
 
     for (i = 0; i < t2; i++) {
         printf("qual o %d valor do vetor 2?\n", i+1);
-        scanf("%d", &V2[i]);
+        scanf("%d", V2+i);
     }
 
     int ret = f(V1, V2, V3, t1, t2);
@@ -39,7 +39,6 @@ int main() {
     	for (i = 0; i < t1; i++) {
         	printf("\n%d", *(V3+i));
     	}
-    	
 	}else{printf("valores invalidos de tamanho");
 	}
     return 0;
